@@ -7,4 +7,8 @@ print("ocena")
 # nie robimy:
 sghdyfweg=1
 
+# nadpisywanie zmiennych
+ocena=ocena+1
+ocena+=1
+print(ocena)
 
