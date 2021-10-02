@@ -1,3 +1,0 @@
-test=20
-print(test)
-print("test={test}")
