@@ -14,4 +14,4 @@ print(abs(-12))
 print(abs(12))
 
 import decimal
-print((decimal.Decimal)(decimal.Decimal))
+#print((decimal.Decimal)(decimal.Decimal))
