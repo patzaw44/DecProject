@@ -1,8 +1,8 @@
-# Zadanie 1
-# Napisz program, który pozwoli wygenerować krótkie opowiadanie.
-# Na początku programu zadeklaruj przynajmniej 5 zmiennych, które będą wykorzystane w tym tekście
-# (jeśli nie masz pomysłu, mogą to być np. imię, wiek, kolor włosów, wybrany dzień tygodnia, pora roku )
-# Edycja wybranych zmiennych powinna zmieniać treść opowiadania.
+""" Zadanie 1
+Napisz program, który pozwoli wygenerować krótkie opowiadanie.
+Na początku programu zadeklaruj przynajmniej 5 zmiennych, które będą wykorzystane w tym tekście
+(jeśli nie masz pomysłu, mogą to być np. imię, wiek, kolor włosów, wybrany dzień tygodnia, pora roku )
+Edycja wybranych zmiennych powinna zmieniać treść opowiadania."""
 
 
 first_name = "William"
