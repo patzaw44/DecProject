@@ -26,3 +26,5 @@ elif 30 <= wynik <= 50:
     print("Ocena to: 2. ")
 elif 0 <= wynik <= 29:
     print("Ocena to: 1. ")
+else:
+    print("Podałeś błędną wartość.")
