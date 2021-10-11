@@ -14,15 +14,23 @@ Napisz program, który zapyta użytkownika o ocenę filmu w skali 1-10.
 
 9-10 -> "genialny"""
 
-ocena = int(input("Podaj ocenę filmu w sklai 1 do 10: "))
+# ocena = int(input("Podaj ocenę filmu w sklai 1 do 10: "))
+while True:
+    ocena_filmu = int(input("Podaj ocenę filmu w sklai 1 do 10: "))
+    if ocena_filmu < 1 or ocena_filmu > 10:
+        print ("nieprawidłowa ocena")
+    else:
+        break
+print(ocena_filmu)
 
-while not 1 <= ocena or ocena >= 10:
-    ocena = int(input("Podaj ocenę filmu w sklai 1 do 10: "))
-    if ocena <= 3:
+
+    # ocena = int(input("Podaj ocenę filmu w sklai 1 do 10: "))
+if 1 <= ocena_filmu <= 3:
         print("strata czasu")
-    elif ocena <= 6:
+elif 4 <= ocena_filmu <= 6:
         print("można obejrzeć na własną odpowiedzialność")
-    elif ocena <= 8:
+elif 7 <= ocena_filmu <= 8:
         print("zdecydowanie warty uwagi")
-    elif ocena <=10:
+elif 9 <= ocena_filmu <=10:
         print("genialny")
+
