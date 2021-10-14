@@ -22,7 +22,7 @@ if title_song.find(' ') != -1:
 else:
     print("W tytule nie występuje spacja.")
 
-print(title_song.isspace())
 
 # wypisuje tytuł ze wstawionymi znakami specjalnymi (np. #, * lub -) pomiędzy każdy znak tytułu
-# print(title_song.split('-')
+
+print("*".join(title_song))
