@@ -1,1 +1,1 @@
-slownik = {"imie":"Mateusz", "miejscowosc_zamieszkania"}
+slownik = {"imie":"Mateusz", "miejscowosc_zamieszkania":"Gdańsk"}
