@@ -17,13 +17,25 @@ print(wylosowana_liczba)
 
 
 
-#wariant 1
-while True:#while 2>1; petla nieskonczona az zgadnie uzytkownik
-    liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
-    if wylosowana_liczba == liczba_uzytkownika:
-        print("Zgadłeś")
-        break # odgadniecie petli powoduje wyjscie z petli
-    elif liczba_uzytkownika > wylosowana_liczba:
-        print("Podana liczba jest za duża")
+# #wariant 1
+# while True:#while 2>1; petla nieskonczona az zgadnie uzytkownik
+#     liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
+#     if wylosowana_liczba == liczba_uzytkownika:
+#         print("Zgadłeś")
+#         break # odgadniecie petli powoduje wyjscie z petli
+#     elif liczba_uzytkownika > wylosowana_liczba:
+#         print("Podana liczba jest za duża")
+#     elif liczba_uzytkownika < wylosowana_liczba:
+#         print("Spróbuj jeszcze raz")
+
+# wariant 2
+
+liczba_uzytkownika = int(input("Podaj liczbe z zakresu 1-100: "))
+while wylosowana_liczba != liczba_uzytkownika:
+
+    if liczba_uzytkownika> wylosowana_liczba:
+        print("Za duża")
     elif liczba_uzytkownika < wylosowana_liczba:
-        print("Spróbuj jeszcze raz")
+        print("Za mała")
+    liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
+print("Zgadłeś")
