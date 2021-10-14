@@ -32,7 +32,6 @@ print(wylosowana_liczba)
 
 liczba_uzytkownika = int(input("Podaj liczbe z zakresu 1-100: "))
 while wylosowana_liczba != liczba_uzytkownika:
-
     if liczba_uzytkownika> wylosowana_liczba:
         print("Za duża")
     elif liczba_uzytkownika < wylosowana_liczba:
