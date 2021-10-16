@@ -9,12 +9,25 @@
 8- jezeli nie ma "podłogi" uzytkownik wygrał
 
   ? wyswietlenie grafiki
-  ? co się stanie jeżeli użytkownik wstawi tą samą literę
-
-
 """
 import random
 
+fajerwerki = """
+
+                                 .''.
+       .''.             *''*    :_\/_:     .
+      :_\/_:   .    .:.*_\/_*   : /\ :  .'.:.'.
+  .''.: /\ : _\(/_  ':'* /\ *  : '..'.  -=:o:=-
+ :_\/_:'.:::. /)\*''*  .|.* '.\'/.'_\(/_'.':'.'
+ : /\ : :::::  '*_\/_* | |  -= o =- /)\    '  *
+  '..'  ':::'   * /\ * |'|  .'/.\'.  '._____
+      *        __*..* |  |     :      |.   |' .---"|
+       _*   .-'   '-. |  |     .--'|  ||   | _|    |
+    .-'|  _.|  |    ||   '-__  |   |  |    ||      |
+    |' | |.    |    ||       | |   |  |    ||      |
+ ___|  '-'     '    ""       '-'   '-.'    '`      |____
+jgs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
 obrazy = ['''
   +---+
   |   |
@@ -23,7 +36,7 @@ obrazy = ['''
  / \  |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -31,7 +44,7 @@ obrazy = ['''
  /    |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -39,7 +52,7 @@ obrazy = ['''
       |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -47,7 +60,7 @@ obrazy = ['''
       |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -63,7 +76,7 @@ obrazy = ['''
       |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
       |
@@ -73,23 +86,21 @@ obrazy = ['''
 =========
 ''']
 
-lista = ["pogoda", "chamura", "drzewo", "trawnika"]
+print("Witamy w grze wisielec!")
+
+lista = ["pogoda", "chmura", "drzewa", "trawnik"]
 
 zycia = 7
 wynik = random.choice(lista)
-print(wynik)
+# print(wynik)
 
-# wynik_lista = list(wynik)
-podloga = (len(wynik)* "_ ")
+podloga = (len(wynik) * "_ ")
 print(podloga)
-
-
 wykorzystane = []
 
-podloga =[]
+podloga = []
 for litera in wynik:
     podloga += "_"
-# print(podloga)
 
 
 while zycia > 0:
@@ -98,17 +109,19 @@ while zycia > 0:
         if wynik[indeks] == litera_uzytkownika:
             podloga[indeks] = wynik[indeks]
     print(' '.join(podloga))
-    # litera_uzytkownika = input("Podaj literę: ").lower()
-    #         if podloga[indeks] == wynik[indeks]:
-    #             print("Wygrałeś!")
-    #             break
 
     if litera_uzytkownika not in wynik:
         print("Niestety, podaj kolejną literę")
         zycia -= 1
         if zycia == 0:
-            print("Koniec gry.")
+            print("Przegrałeś, koniec gry.")
         print(obrazy[zycia])
-    if podloga[indeks] == wynik[indeks]:
+
+    if podloga.count("_") == 0:
         print("Wygrałeś!")
+        print(fajerwerki)
         break
+    wykorzystane.append(litera_uzytkownika)
+    proby = len(wykorzystane)
+    print(f"Na razie wykorzystałeś następujące litery: {wykorzystane}.")
+    print(f"Liczba prób: {proby}")
