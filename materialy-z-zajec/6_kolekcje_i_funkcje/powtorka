@@ -1,0 +1,45 @@
+#listy
+lista = [1, 2, 3]
+print(lista)
+lista.append(4)
+print(lista)
+print(lista[0])
+print(lista[1:])
+
+
+#krotki / tuple
+krotka = (1, 2, 3)
+print(krotka[0])
+
+#slowniki / dictionary
+#klucz i wartość!
+#krotka moze być kluczem, ale lista już nie
+slownik = {1: "jeden", 2: "dwa"}
+slownik[krotka] = "lista"
+slownik["cokolwiek"]="dwa"
+
+kolejny_slownik = {"nazwa": "kot", "imie":'mruczka'}
+slownik["kolejny"]=kolejny_slownik
+print(slownik['kolejny']['nazwa'])
+
+#czy dany klucz jest w slowniku
+print(slownik.get("1", "nie ma"))
+print("dwa" in slownik)
+
+for cos in slownik:
+    print(f"klucz => {cos}, wartosc => {slownik[cos]}")
+
+# # pytania = {
+#     "Ile ludnosci ma polska": {
+#
+#     }
+# }
+
+slownik.keys()
+print(list(slownik.keys()))#przeksztalcenie na liste
+slownik.values()
+slownik.items()
+
+suma = 0
+for liczba in
+#zbiory
