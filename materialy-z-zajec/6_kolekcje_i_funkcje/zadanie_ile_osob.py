@@ -15,5 +15,5 @@ print(uczniowie_na_roku)
 zbior_ucz_roku = set(uczniowie_na_roku)
 zbior_ucz_wyk = set(uczniowie_na_wykladzie)
 
-
-print(zbior_ucz_roku.difference(uczniowie_na_wykladzie))
+brakujacy_uczniowie = zbior_ucz_roku.difference(uczniowie_na_wykladzie)
+print(f"Opuscili zajecia: {brakujacy_uczniowie}.")
