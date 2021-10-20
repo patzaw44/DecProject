@@ -12,4 +12,16 @@ Przykładowo
 
 Program powinien oczywiscie obsługiwać wyniki również poza tymi, które zostały wymienione."""
 
-wynik = input("Podaj wynik meczu, np 1:1: ")
+score = input("Podaj wynik meczu, w formacie x:x  -> ")
+team_a = int(score[0])
+team_b = int(score[-1])
+# print(team_a)
+# print(team_b)
+# print(score)
+
+if team_a > team_b:
+    print(f"{score} -> gospodarze wygrali {team_a} bramkami")
+elif team_a == team_b:
+    print(f"{score} -> padł remis")
+else:
+    print(f"{score} -> goście wygrali {team_b} bramkami")
