@@ -6,6 +6,7 @@ def oblicz_cene_brutto(cena_netto):
 def oblicz_cene_brutto_v2(cena_netto, stawka_vat):
     return cena_netto * (1 + stawka_vat)
 
+
 def oblicz_cene_brutto_v3(cena_netto, kategoria):
     if kategoria == "usługi":
         vat = 0.08
