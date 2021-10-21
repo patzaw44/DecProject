@@ -29,12 +29,22 @@ które ma otrzymać użytkownik:
 PODSTAWOWA_LICZBA_GODZIN = 160
 PRZELICZNIK_NADGODZIN = 1.5
 
-def oblicz_wyplate_v2(liczba_przepracowanych_godzin, stawka_godzinowa):
+def wylicz_nadgodziny(nadgodziny):
     if liczba_przepracowanych_godzin > PODSTAWOWA_LICZBA_GODZIN:
         nadgodziny = liczba_przepracowanych_godzin-PODSTAWOWA_LICZBA_GODZIN
     else:
         nadgodziny = 0
-    wynagrodzenie_podstawowe = min(liczba_przepracowanych_godzin,PODSTAWOWA_LICZBA_GODZIN) * stawka_godzinowa
+    return nadgodziny
+
+def oblicz_wyplate_v2(stawka_godzinowa, liczba_nadgodzin):
+    """
+    (dodawanie trzech cudzyslowów + enter)
+    :param liczba_przepracowanych_godzin:
+    :param stawka_godzinowa:
+    :return:
+    """
+    nadgodziny = wylicz_nadgodziny(liczba_nadgodzin)
+    wynagrodzenie_podstawowe = min(liczba_przepracowanych_godzin, PODSTAWOWA_LICZBA_GODZIN) * stawka_godzinowa
     wynagrodzenie_nadgodziny = nadgodziny * stawka_godzinowa * PRZELICZNIK_NADGODZIN
     wynagrodzenie = wynagrodzenie_podstawowe + wynagrodzenie_nadgodziny
     print(f"Podstawa -> {wynagrodzenie_podstawowe} zł, nadgodziny -> {wynagrodzenie_nadgodziny}zł.")
