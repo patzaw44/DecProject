@@ -7,15 +7,10 @@ Napisz program, który zapyta użytkownika o 10 liczb, a następnie obliczy ich:
    - średnią
 """
 
-liczby = input("Podaj 10 liczb: ")
-special_sign = [","]
-for i in liczby:
-    if i in special_sign:
-        liczby = liczby.replace(i, "")
-# print(liczby)
+liczby = input("Podaj 10 liczb po spacji: ")
 
-liczby = list(liczby)
+# split a string into a list where each word is a list item
+liczby = [float(i) for i in liczby.split()]
 print(liczby)
-
-# suma = sum(liczby)
-# print(suma)
+print(f"Suma wynosi: {sum(liczby)}")
+print('Średnia wynosi: '+"{:.1f}".format(sum(liczby) / len(liczby)))
