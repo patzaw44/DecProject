@@ -35,7 +35,7 @@ lokalizacje = {
 
 def pobierz_lokalizacje():
     while True:
-        panstwo = input("Jaki cel podróży")
+        panstwo = input("Jaki cel podróży: ")
         if panstwo in lokalizacje:
             return panstwo
 
@@ -56,8 +56,8 @@ def oblicz_koszt_podrozy(panstwo, liczba_nocy, liczba_samochod):
 
 
 panstwo = pobierz_lokalizacje()
-liczba_nocy = pobierz_liczbe("Podaj liczbę nocy")
-dni_samochod = pobierz_liczbe("Na ile dni chcesz samochód")
+liczba_nocy = pobierz_liczbe("Podaj liczbę nocy: ")
+dni_samochod = pobierz_liczbe("Na ile dni chcesz samochód:")
 
 koszt = oblicz_koszt_podrozy(panstwo=panstwo, liczba_nocy=liczba_nocy, liczba_samochod=dni_samochod)
 print(koszt)
