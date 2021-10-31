@@ -26,27 +26,32 @@ jeśli odgadł w ostatniej próbie, to powienien dostać 10 punktów (nie zosta�
 
 
 import random
-
+zycia = 6
 wylosowana_liczba = random.randint(1, 100)
 print(wylosowana_liczba)
 
 # wariant 1
-# while True:
-#     liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
-#     if wylosowana_liczba == liczba_uzytkownika:
-#         print("Zgadłeś")
-#         break
-#     elif liczba_uzytkownika > wylosowana_liczba:
-#         print("Podana liczba jest za duża")
-#     elif liczba_uzytkownika < wylosowana_liczba:
-#         print("Podana liczba jest za mała")
+while zycia > 0:
+    liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
+    if wylosowana_liczba == liczba_uzytkownika:
+        liczba_punktow = zycia * 10 + 10
+        print(f"Zgadłeś! Otrzymujesz {liczba_punktow} punktów")
+        break
+    elif liczba_uzytkownika > wylosowana_liczba:
+        zycia -= 1
+        print("Podana liczba jest za duża")
+    elif liczba_uzytkownika < wylosowana_liczba:
+        zycia -= 1
+        print("Podana liczba jest za mała")
+else:
+    print("Niestety, wykorzystałeś sześć szans. Otrzymujesz 0 punktów.")
 
 
 # wariant 2
-liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100"))
-while wylosowana_liczba != liczba_uzytkownika:
-    if liczba_uzytkownika > wylosowana_liczba:
-        print("Za duża")
-    elif liczba_uzytkownika < wylosowana_liczba:
-        print("Za mała")
-    liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100"))
+# liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
+# while wylosowana_liczba != liczba_uzytkownika:
+#     if liczba_uzytkownika > wylosowana_liczba:
+#         print("Za duża")
+#     elif liczba_uzytkownika < wylosowana_liczba:
+#         print("Za mała")
+#     liczba_uzytkownika = int(input("Podaj liczbę z zakresu 1-100: "))
