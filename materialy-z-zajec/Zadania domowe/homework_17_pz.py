@@ -1,7 +1,8 @@
-
-"""zadanie 17
+""""
+Zadanie 17
 Poznaliśmy metodę na napisach, która nazywała się replace.
-Napisz własną funkcję, która nie będzie korzystała z metody replace, ale odtworzy jej zachowanie dla zmieniania pojedynczego znaku.
+Napisz własną funkcję, która nie będzie korzystała z metody replace, ale odtworzy jej zachowanie dla zmieniania
+pojedynczego znaku.
 
 Funkcja powinna przyjąć 3 argumenty:
 
