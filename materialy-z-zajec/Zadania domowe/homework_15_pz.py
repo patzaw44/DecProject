@@ -8,14 +8,20 @@ Napisz program, który zapyta użytkownika o jakieś zdanie, a następnie policz
 # uzytkownik = uzytkownik.split(' ')
 # bez_spacji = ''.join(uzytkownik)
 
-uzytkownik = ''.join((input("Napisz jakieś zdanie: ")).split(' '))
+UZYTKOWNIK = ''.join((input("Napisz jakieś zdanie: ")).split(' '))
 
-print(uzytkownik)
-liczba_liter = {}
-for litera in uzytkownik:
-    liczba_liter.setdefault(litera, 0)
-    liczba_liter[litera] = liczba_liter[litera]+1
-print(liczba_liter)
+print(UZYTKOWNIK)
+
+
+def obliczanie_liter():
+    liczba_liter = {}
+    for litera in UZYTKOWNIK:
+        liczba_liter.setdefault(litera, 0)
+        liczba_liter[litera] = liczba_liter[litera]+1
+    print(liczba_liter)
+
+
+obliczanie_liter()
 
 
 
