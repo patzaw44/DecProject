@@ -37,4 +37,3 @@ class Test(TestCase):
     def test_trzycyfrowy_wynik(self):
         gole = pobierz_liczbe_goli("130:121")
         self.assertEqual(gole, (130, 121))
-
