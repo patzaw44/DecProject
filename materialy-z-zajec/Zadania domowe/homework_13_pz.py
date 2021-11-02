@@ -85,3 +85,13 @@ But if there is nothing shaking come this here July
 I am gonna roll myself up
 In a big ball and die
 My, my """
+
+
+list_user = uzytkownik.split(" ")
+
+print(list_user)
+liczba_liter = {}
+for litera in list_user:
+    liczba_liter.setdefault(litera,0)
+    liczba_liter[litera] = liczba_liter[litera]+1
+print(liczba_liter )
