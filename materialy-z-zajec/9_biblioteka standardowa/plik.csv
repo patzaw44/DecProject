@@ -1,4 +1,5 @@
-imie, nazwisko, data zatrudnienia, stanowisko
-Jan, Kowalski, 2020-01-01, inżynier
-Michał, Nowakowski, 2015-03-05, manager
-Sandra, Białek, 2021-02-08, developerka
+imie,nazwisko,data zatrudnienia,stanowisko,pensja
+Jan,Kowalski,2020-01-01,inżynier,1000
+Michał,Nowakowski,2015-03-05,manager,2000
+Sandra,Białek,2021-02-08,developerka,3000
+Agnieszka,Radwańska,2018-07-12,tenisistka,4000
