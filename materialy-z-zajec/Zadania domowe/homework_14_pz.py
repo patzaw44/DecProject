@@ -23,4 +23,3 @@ def posortowany_tekst_uzytkownika():
 
 tekst_uzytkownika()
 posortowany_tekst_uzytkownika()
-
