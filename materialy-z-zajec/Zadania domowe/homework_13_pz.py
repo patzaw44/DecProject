@@ -96,7 +96,6 @@ song_two = '\n'.join(song_two.split(" ")).split("\n")
 # tworzenie zbiorów:
 song_ny = set(song_one)
 song_life = set(song_two)
-
 # print(song_ny)
 # print(song_life)
 
