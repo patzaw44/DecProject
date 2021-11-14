@@ -8,10 +8,6 @@ Hasło powinno się zmieniać wraz z każdym uruchomieniem programu.
 Pamiętaj, że dobre hasło powinno zawierać zarówno małe jak i duże litery, cyfry oraz znaki specjalne (np. #?%&).
 """
 import random
-liczba_liter = int(input("Podaj liczbę liter: "))
-liczba_liczb = int(input("Podaj liczbę liczb: "))
-liczba_znakow = int(input("Podaj liczbę znaków specjalnych: "))
-
 
 znaki_specjalne = [',', '.', ':', ';', '!', '%', '#', '$', '*', '/']
 litery_male = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z',
@@ -28,7 +24,7 @@ litery_mix = litery_male + litery_duze
 # print(litery_mix)
 
 
-def generowanie_hasla():
+def generowanie_hasla(liczba_liter, liczba_liczb,liczba_znakow):
     haslo = []
 
     for a in range(1, liczba_liter + 1):
@@ -47,4 +43,6 @@ def generowanie_hasla():
     print(f"Twoje hasło : {ladniejsze_wyswietlenie}")
 
 
-generowanie_hasla()
+generowanie_hasla(liczba_liter = int(input("Podaj liczbę liter: ")),
+                  liczba_liczb = int(input("Podaj liczbę liczb: ")),
+                  liczba_znakow =int(input("Podaj liczbę znaków specjalnych: ")))
