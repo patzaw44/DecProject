@@ -10,3 +10,18 @@ przefiltruj_pliki_muzyczne() => []
 przefiltruj_pliki_muzyczne("zdjecie.jpg", "plik.mp3", "piosenka.wav", "program.exe") => ["plik.mp3", "piosenka.wav"]
 
 """
+
+
+def przefiltruj_pliki_muzyczne(lista_plikow):
+
+    try:
+        filtered = []
+        for t in lista_plikow:
+            if '.mp3' in t or '.wav' in t:
+                filtered.append(t)
+        print(f"Przefiltrowane pliki muzyczne to: {filtered}.")
+    except NameError:
+        print("[]")
+
+
+przefiltruj_pliki_muzyczne(('zdjecie.jpg', 'plik.mp3', 'piosenka.wav', 'program.exe'))
