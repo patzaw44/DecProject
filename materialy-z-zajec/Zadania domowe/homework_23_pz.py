@@ -6,3 +6,13 @@ Napisz program, który będzie zawierał funkcję, która dla tekstu przekazaneg
  Do znalezienia dat użyj modułu z wyrażeniami regularnymi re
 
 """
+import re
+
+
+def lista_wszystkich_dat(tekst):
+    data = re.compile(r'\d\d\d\d-\d\d-\d\d')   # lub \d{3}-\d{2}-\d{2}
+    szukanie = data.findall(tekst)
+    print(f'Znaleziono daty: {szukanie}')
+
+
+lista_wszystkich_dat("Tekst z dnia 2021-08-24, innego dnia 2020-08-28.")
