@@ -2,6 +2,7 @@
 
 Napisz program, który wyświetli tylko zakomentowane linijki we wszystkich plikach Pythonowych w bieżącym folderze"""
 
+import os
 
 def sprawdz_czy_komentarz(linijka):
     return linijka.startswith("#")
@@ -18,4 +19,7 @@ def znajdz_komentarze_w_pliku(nazwa_pliku):
     return lista_komentarzy
 
 
-znajdz_komentarze_w_pliku("homework_27_pz.py")
+# znajdz_komentarze_w_pliku("homework_27_pz.py")
+plik = os.listdir('homework_26')
+znajdz_komentarze_w_pliku(plik)
+
