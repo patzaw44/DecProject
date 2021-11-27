@@ -50,21 +50,24 @@ def wyswietl_menu_restauracji(wybor_restauracji):
 
 
 def lista_potraw(indeks):
-    # Stworzenie listy krotek:
-    print(restauracje[wybrana_restauracja]['menu'])
-
-    kontynuacja = input("Czy kontynuujesz zamówienie? Wpisz (T/N): ")
     lista_zamowienia = []
     konkretne_menu = restauracje[wybrana_restauracja]['menu'][indeks]
+    lista_zamowienia.append(konkretne_menu)
+    # Stworzenie listy krotek:
 
-    if kontynuacja == 'T':
-        for p in konkretne_menu:
-            lista_zamowienia.append(p)
+    print(restauracje[wybrana_restauracja]['menu'])
 
-    elif kontynuacja == 'N':
-        print("To koniec zamówienia.")
-        # lista_zamowienia.append(p)
-        print(lista_zamowienia)
+    while True:
+        print("Aktualne zamówienie", lista_zamowienia)
+        kontynuacja = input("Czy kontynuujesz zamówienie? Wpisz (T/N): ")
+        if kontynuacja == 'N':
+            break
+        pozycja_w_menu = int(input("Wypisz nr potrawy z menu (od 0 do 3):"))
+        konkretne_menu = restauracje[wybrana_restauracja]['menu'][pozycja_w_menu]
+        lista_zamowienia.append(konkretne_menu)
+
+    print(f"Końcowe zamówienie to {lista_zamowienia}")
+
 
 
 # def zamowienie(wybrana_restauracja, koszt_dostawy, potrawy):
