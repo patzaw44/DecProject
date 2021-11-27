@@ -8,7 +8,7 @@ wyliczenie kosztów dowozu dla każdej z restauracji (uzależnienie kosztu dowoz
 wybór dań z menu i podsumowanie zamówienia """
 
 
-from logo import logo, menu_obraz
+from logo import logo, menu_obraz, zamowienie
 from menu import restauracje
 from menu_wybranej_restauracji import menu_wloska, menu_chinczyk, menu_hiszpanska
 
@@ -83,9 +83,12 @@ def podsumowanie_zamowienia(lista_zamowienia, koszt_dostawy):
     print(f"Twoje całkowite koszty zamówienia + dostawa : {koszty_calkowite}. ")
     return koszty_calkowite
 
-# def zapis_do_pliku(do_zapisu):
-#     with open("zamówienie.txt", mode="w", encoding="utf-8") as f:
-#         f.write(f"Końcowe zamówienie to {lista_zamowienia} {koszty_calkowite}")
+
+def zapis_do_pliku(koszty_calkowite, lista_zamowienia):
+    with open("zamówienie.txt", mode="w", encoding="utf-8") as f:
+        f.write(f"{zamowienie}\nKońcowe zamówienie to {lista_zamowienia}\nDo zapłaty za powyższe zamówienie:"
+                f" {koszty_calkowite} zł.")
+
 
 
 
@@ -95,7 +98,7 @@ koszt_dostawy = wyliczenie_kosztow_dostawy(lokalizacja)
 wyswietl_menu_restauracji(wybor_restauracji)
 potrawa = lista_potraw(int(input("Wypisz nr potrawy z menu (od 0 do 3):")))
 do_zapisu = podsumowanie_zamowienia(potrawa, koszt_dostawy)
-# zapis_do_pliku(do_zapisu)
+zapis_do_pliku(do_zapisu, potrawa)
 
 
 

@@ -8,7 +8,7 @@ wyliczenie kosztów dowozu dla każdej z restauracji (uzależnienie kosztu dowoz
 wybór dań z menu i podsumowanie zamówienia """
 
 
-from logo import logo, menu_obraz
+from logo import logo, menu_obraz, zamowienie
 from menu import restauracje
 from menu_wybranej_restauracji import menu_wloska, menu_chinczyk, menu_hiszpanska
 
@@ -18,48 +18,50 @@ print(logo)
 
 
 class Zamowienie:
-    def __init__(self, wybrana_restauracja, lokalizacja, koszt_dostawy, potrawa):
+    def __init__(self):
         self.restauracja = input("Wybierz restauracje - Chinczyk, Wloska, Hiszanska:  ").title()
         self.lokalizacja = input("Podaj swoją obecną lokalizację: ").title()
-        self.koszt_dostawy = koszt_dostawy
-        self.potrawa = potrawa
+        self.potrawa = int(input("Wypisz nr potrawy z menu (od 0 do 3):"))
+        self.koszt_dostawy = 0
 
-    def wybor_restauracji(self, wybrana_restauracja):
+    def wybor_restauracji(self):
+        wybrana_restauracja = self.restauracja
         # print(f"Wybrano restauracje: {restauracja}, której menu i lokalizacja to: {restauracje[restauracja]}.")
         print(f"WYBRANO RESTAURACJE: {wybrana_restauracja}\n"
               f"LOKALIZACJA RESTAURACJI: {restauracje[wybrana_restauracja]['lokalizacja']}\n")
         return wybrana_restauracja
 
 
-    def wyswietl_lokalizacje_uzytkownika(lokalizacja_uzytkownik):
+    def wyswietl_lokalizacje_uzytkownika(self):
+        lokalizacja_uzytkownik = self.lokalizacja
         lista_lokalizacji = []
         # for restauracja in restauracje:
         #    lista_lokalizacji.append(restauracja([0][0]))
         print(f"Twoja lokalizacja to: {lokalizacja_uzytkownik}.")
         return lokalizacja_uzytkownik
 
-    def wyliczenie_kosztow_dostawy(self, lokalizacja, wybrana_restauracja ):
-        if lokalizacja == restauracje[wybrana_restauracja]['lokalizacja']:
+    def wyliczenie_kosztow_dostawy(self):
+        if self.lokalizacja == restauracje[self.restauracja]['lokalizacja']:
             dostawa = 0
         else:
             dostawa = 10
+        self.dostawa = dostawa
         print(f"Dostawa wynosi: {dostawa}zł.")
-        return dostawa
 
 
-    def wyswietl_menu_restauracji(self, wybrana_restauracja):
+    def wyswietl_menu_restauracji(self):
         print(menu_obraz)
-        if wybrana_restauracja == 'Chinczyk':
+        if self.restauracja == 'Chinczyk':
             print(menu_chinczyk)
-        elif wybrana_restauracja == 'Wloska':
+        elif self.restauracja == 'Wloska':
             print(menu_wloska)
-        elif wybrana_restauracja == 'Hiszpanska':
+        elif self.restauracja == 'Hiszpanska':
             print(menu_hiszpanska)
 
 
-    def lista_potraw(self, indeks, wybrana_restauracja):
+    def lista_potraw(self):
         lista_zamowienia = []
-        konkretne_menu = restauracje[wybrana_restauracja]['menu'][indeks]
+        konkretne_menu = restauracje[self.restauracja]['menu'][self.potrawa]
         lista_zamowienia.append(konkretne_menu)
         # Stworzenie listy krotek:
 
@@ -71,41 +73,41 @@ class Zamowienie:
             if kontynuacja == 'N':
                 break
             pozycja_w_menu = int(input("Wypisz nr potrawy z menu (od 0 do 3):"))
-            konkretne_menu = restauracje[wybrana_restauracja]['menu'][pozycja_w_menu]
+            konkretne_menu = restauracje[self.restauracja]['menu'][pozycja_w_menu]
             lista_zamowienia.append(konkretne_menu)
 
         print(f"Końcowe zamówienie to {lista_zamowienia}")
-        return lista_zamowienia
+        self.lista_zamowienia = lista_zamowienia
 
 
-    def podsumowanie_zamowienia(self, lista_zamowienia, koszt_dostawy):
-        print(lista_zamowienia)
+    def podsumowanie_zamowienia(self):
+        print(self.lista_zamowienia)
         koszty_zamowienia = []
-        for k in lista_zamowienia:
+        for k in self.lista_zamowienia:
             kwota = k[1]
             koszty_zamowienia.append(kwota)
         # print(koszty_zamowienia)
 
         koszty_zamowienia = sum(koszty_zamowienia)
-        koszty_calkowite = koszty_zamowienia + koszt_dostawy
+        koszty_calkowite = koszty_zamowienia + self.dostawa
         print(f"Twoje całkowite koszty zamówienia + dostawa : {koszty_calkowite}. ")
-        return koszty_calkowite
+        self.koszty_calkowite = koszty_calkowite
 
-    # def zapis_do_pliku(do_zapisu):
-    #     with open("zamówienie.txt", mode="w", encoding="utf-8") as f:
-    #         f.write(f"Końcowe zamówienie to {lista_zamowienia} {koszty_calkowite}")
-
-
-
-wybrana_restauracja = Zamowienie.wybor_restauracji()
-lokalizacja = Zamowienie.wyswietl_lokalizacje_uzytkownika()
-koszt_dostawy = Zamowienie.wyliczenie_kosztow_dostawy(lokalizacja)
-zamowienie2 = Zamowienie.wyswietl_menu_restauracji()
-potrawa = Zamowienie.lista_potraw(int(input("Wypisz nr potrawy z menu (od 0 do 3):")))
-Zamowienie.podsumowanie_zamowienia(potrawa, koszt_dostawy)
+    def zapis_do_pliku(self):
+        with open("zamówienie.txt", mode="w", encoding="utf-8") as f:
+            f.write(f"{zamowienie}\nKońcowe zamówienie to {self.lista_zamowienia}\nDo zapłaty za powyższe zamówienie:"
+                    f" {self.koszty_calkowite} zł.")
 
 
- # zapis_do_pliku()
+zamowienie1 = Zamowienie()
+wybrana_restauracja = zamowienie1.wybor_restauracji()
+lokalizacja = zamowienie1.wyswietl_lokalizacje_uzytkownika()
+zamowienie1.wyswietl_menu_restauracji()
+koszt_dostawy = zamowienie1.wyliczenie_kosztow_dostawy()
+
+potrawa = zamowienie1.lista_potraw()
+zamowienie1.podsumowanie_zamowienia()
+zamowienie1.zapis_do_pliku()
 
 
 
