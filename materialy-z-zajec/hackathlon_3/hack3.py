@@ -55,7 +55,7 @@ def lista_potraw(indeks):
     lista_zamowienia.append(konkretne_menu)
     # Stworzenie listy krotek:
 
-    print(restauracje[wybrana_restauracja]['menu'])
+    # print(restauracje[wybrana_restauracja]['menu'])
 
     while True:
         print("Aktualne zamówienie", lista_zamowienia)
@@ -67,11 +67,25 @@ def lista_potraw(indeks):
         lista_zamowienia.append(konkretne_menu)
 
     print(f"Końcowe zamówienie to {lista_zamowienia}")
+    return lista_zamowienia
 
 
+def podsumowanie_zamowienia(lista_zamowienia, koszt_dostawy):
+    print(lista_zamowienia)
+    koszty_zamowienia = []
+    for k in lista_zamowienia:
+        kwota = k[1]
+        koszty_zamowienia.append(kwota)
+    # print(koszty_zamowienia)
 
-# def zamowienie(wybrana_restauracja, koszt_dostawy, potrawy):
-#pass
+    koszty_zamowienia = sum(koszty_zamowienia)
+    koszty_calkowite = koszty_zamowienia + koszt_dostawy
+    print(f"Twoje całkowite koszty zamówienia + dostawa : {koszty_calkowite}. ")
+    return koszty_calkowite
+
+# def zapis_do_pliku(do_zapisu):
+#     with open("zamówienie.txt", mode="w", encoding="utf-8") as f:
+#         f.write(f"Końcowe zamówienie to {lista_zamowienia} {koszty_calkowite}")
 
 
 
@@ -80,4 +94,8 @@ lokalizacja = wyswietl_lokalizacje_uzytkownika(input("Podaj swoją obecną lokal
 koszt_dostawy = wyliczenie_kosztow_dostawy(lokalizacja)
 wyswietl_menu_restauracji(wybor_restauracji)
 potrawa = lista_potraw(int(input("Wypisz nr potrawy z menu (od 0 do 3):")))
+do_zapisu = podsumowanie_zamowienia(potrawa, koszt_dostawy)
+# zapis_do_pliku(do_zapisu)
+
+
 
