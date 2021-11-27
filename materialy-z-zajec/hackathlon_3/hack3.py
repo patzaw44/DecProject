@@ -8,8 +8,9 @@ wyliczenie kosztów dowozu dla każdej z restauracji (uzależnienie kosztu dowoz
 wybór dań z menu i podsumowanie zamówienia """
 
 
-from logo import logo
+from logo import logo, menu_obraz
 from menu import restauracje
+from menu_wybranej_restauracji import menu_wloska, menu_chinczyk, menu_hiszpanska
 
 print(logo)
 # wczytanie z pliku kilku restauracji wraz z ich lokalizacją i menu
@@ -17,9 +18,8 @@ print(logo)
 
 def wybor_restauracji(restauracja):
     # print(f"Wybrano restauracje: {restauracja}, której menu i lokalizacja to: {restauracje[restauracja]}.")
-    print(f"Wybrano restauracje: {restauracja}\n"
-          f"LOKALIZACJA: {restauracje['Wloska']['lokalizacja']}\n"
-          f"MENU (potrawa - cena): {restauracje['Wloska']['menu']}")
+    print(f"WYBRANO RESTAURACJE: {restauracja}\n"
+          f"LOKALIZACJA RESTAURACJI: {restauracje[restauracja]['lokalizacja']}\n")
     return restauracja
 
 
@@ -31,30 +31,50 @@ def wyswietl_lokalizacje_uzytkownika(lokalizacja_uzytkownik):
     return lokalizacja_uzytkownik
 
 def wyliczenie_kosztow_dostawy(lokalizacja):
-    if lokalizacja == 'Gdansk':
-        if restauracje['lokalizacja'] == 'Gdansk':
-            dostawa = 0
-        if restauracje['lokalizacja'] == 'Gdynia':
-            dostawa = 5
-        if restauracje['lokalizacja']=='Rumia':
-            dostawa = 15
+    if lokalizacja == restauracje[wybrana_restauracja]['lokalizacja']:
+        dostawa = 0
+    else:
+        dostawa = 10
+    print(f"Dostawa wynosi: {dostawa}zł.")
     return dostawa
 
-# def zamowienie():
-#     restauracja = 'Wloska'
-#     if restauracja == restauracje[restauracja]:
-#         rachunek = []
-#         for rachunek in transakcje:
-#             typ_transakcji = transakcja[0]
-#             kwota = transakcja[1]
-#             if typ_transakcji == "W":
-#                 wyplata.append(kwota)
-#             elif typ_transakcji == "D":
-#                 wplata.append(kwota)
+
+def wyswietl_menu_restauracji(wybor_restauracji):
+    print(menu_obraz)
+    if wybrana_restauracja == 'Chinczyk':
+        print(menu_chinczyk)
+    elif wybrana_restauracja == 'Wloska':
+        print(menu_wloska)
+    elif wybrana_restauracja == 'Hiszpanska':
+        print(menu_hiszpanska)
+
+
+def lista_potraw(indeks):
+    # Stworzenie listy krotek:
+    print(restauracje[wybrana_restauracja]['menu'])
+
+    kontynuacja = input("Czy kontynuujesz zamówienie? Wpisz (T/N): ")
+    lista_zamowienia = []
+    konkretne_menu = restauracje[wybrana_restauracja]['menu'][indeks]
+
+    if kontynuacja == 'T':
+        for p in konkretne_menu:
+            lista_zamowienia.append(p)
+
+    elif kontynuacja == 'N':
+        print("To koniec zamówienia.")
+        # lista_zamowienia.append(p)
+        print(lista_zamowienia)
+
+
+# def zamowienie(wybrana_restauracja, koszt_dostawy, potrawy):
+#pass
 
 
 
 wybrana_restauracja = wybor_restauracji(input("Wybierz restauracje - Chinczyk, Wloska, Hiszanska:  ").title())
 lokalizacja = wyswietl_lokalizacje_uzytkownika(input("Podaj swoją obecną lokalizację: ").title())
 koszt_dostawy = wyliczenie_kosztow_dostawy(lokalizacja)
-print()
+wyswietl_menu_restauracji(wybor_restauracji)
+potrawa = lista_potraw(int(input("Wypisz nr potrawy z menu (od 0 do 3):")))
+

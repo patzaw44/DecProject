@@ -43,3 +43,14 @@ def obliczanie_punktow():
     print(f"Suma wynosi: {pkty}.")
 
 obliczanie_punktow()
+
+# punktacja ={"a": 1, "ą":22, "b": 3, "c": 5, "ć":6, "d": 7, "e": 0, "ę":70, "f": 2, "g": 3, "h": 1, "i": 1, "j": 1, "k": 0, "l": 2, "ł":6, "m": 4, "n": 4, "ń":8, "o": 0, "ó":23, "p": 0, "r" : 0, "s" : 3, "ś": 50, "t" : 1, "u" : 1, "w" : 1, "y":19, "ź": 40, "ż": 50, "z": 12}
+# slowo = input("Podaj proszę słowo:").lower()
+#
+# suma = 0
+# for litera in slowo:
+#     if litera not in punktacja:
+#         punktacja[litera] = 10
+#     suma += punktacja[litera]
+#
+# print(f"Suma punktów za podane słowo wynosi {suma}")
