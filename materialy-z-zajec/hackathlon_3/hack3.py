@@ -16,6 +16,7 @@ print(logo)
 # wczytanie z pliku kilku restauracji wraz z ich lokalizacją i menu
 # print(restauracje)
 
+
 def wybor_restauracji(restauracja):
     # print(f"Wybrano restauracje: {restauracja}, której menu i lokalizacja to: {restauracje[restauracja]}.")
     print(f"WYBRANO RESTAURACJE: {restauracja}\n"
@@ -29,6 +30,7 @@ def wyswietl_lokalizacje_uzytkownika(lokalizacja_uzytkownik):
     #    lista_lokalizacji.append(restauracja([0][0]))
     print(f"Twoja lokalizacja to: {lokalizacja_uzytkownik}.")
     return lokalizacja_uzytkownik
+
 
 def wyliczenie_kosztow_dostawy(lokalizacja):
     if lokalizacja == restauracje[wybrana_restauracja]['lokalizacja']:
@@ -90,13 +92,11 @@ def zapis_do_pliku(koszty_calkowite, lista_zamowienia):
                 f" {koszty_calkowite} zł.")
 
 
-
-
 wybrana_restauracja = wybor_restauracji(input("Wybierz restauracje - Chinczyk, Wloska, Hiszanska:  ").title())
 lokalizacja = wyswietl_lokalizacje_uzytkownika(input("Podaj swoją obecną lokalizację: ").title())
 koszt_dostawy = wyliczenie_kosztow_dostawy(lokalizacja)
 wyswietl_menu_restauracji(wybor_restauracji)
-potrawa = lista_potraw(int(input("Wypisz nr potrawy z menu (od 0 do 3):")))
+potrawa = lista_potraw(int(input("Wpisz nr potrawy z menu (od 0 do 3):")))
 do_zapisu = podsumowanie_zamowienia(potrawa, koszt_dostawy)
 zapis_do_pliku(do_zapisu, potrawa)
 
