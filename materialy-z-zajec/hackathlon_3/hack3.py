@@ -30,15 +30,15 @@ def wyswietl_lokalizacje_uzytkownika(lokalizacja_uzytkownik):
     print(f"Twoja lokalizacja to: {lokalizacja_uzytkownik}.")
     return lokalizacja_uzytkownik
 
-def wyliczenie_kosztow_dostawy():
-    wyswietl_lokalizacje_uzytkownika()
-    if lokalizacja_uzytkownik == 'Gdansk':
+def wyliczenie_kosztow_dostawy(lokalizacja):
+    if lokalizacja == 'Gdansk':
         if restauracje['lokalizacja'] == 'Gdansk':
             dostawa = 0
         if restauracje['lokalizacja'] == 'Gdynia':
             dostawa = 5
         if restauracje['lokalizacja']=='Rumia':
             dostawa = 15
+    return dostawa
 
 # def zamowienie():
 #     restauracja = 'Wloska'
@@ -54,5 +54,7 @@ def wyliczenie_kosztow_dostawy():
 
 
 
-wybor_restauracji(input("Wybierz restauracje - Chinczyk, Wloska, Hiszanska:  ").title())
-wyswietl_lokalizacje_uzytkownika(input("Podaj swoją obecną lokalizację: ").title())
+wybrana_restauracja = wybor_restauracji(input("Wybierz restauracje - Chinczyk, Wloska, Hiszanska:  ").title())
+lokalizacja = wyswietl_lokalizacje_uzytkownika(input("Podaj swoją obecną lokalizację: ").title())
+koszt_dostawy = wyliczenie_kosztow_dostawy(lokalizacja)
+print()
