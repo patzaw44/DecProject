@@ -13,13 +13,14 @@
 #     1. Import the include() function: from django.urls import include, path
 #     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 # """
-from django.contrib import admin
-from django.urls import path, include
+# from django.contrib import admin
+# from django.urls import path, include
 
 #
-urlpatterns = [
-    path('admin/', admin.site.urls),
-#     # path('', desktop),
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/', include('art.urls'))
+
 #     # path('cars', include('django_app.urls'))
 #     path('cars/', include('django_app.urls'))
 # #     path('cars/{ id } ', include('django_app.urls')) delete
@@ -30,4 +31,19 @@ urlpatterns = [
 # #     path('cars/ ', include('django_app.urls'))
 # #     path('popular  ', include('django_app.urls'))
 # #     path('popular/', include('django_app.urls'))
+# ]
+# from django.contrib import admin
+# from django.urls import path, include
+#
+#
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include('django_app.urls'))
+# ]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('django_app.urls')),
 ]

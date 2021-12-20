@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 # from .models import Cars
-from rest_framework import viewsets
+# from rest_framework import viewsets
 # from .serialized import CarsSerializer
 #
-#
+
 # # Create your views here.
 #
 # # def desktop(request):
@@ -22,4 +22,19 @@ from rest_framework import viewsets
 # #     fields_lookup = 'pk'
 # #     queryset = Cars.objects.all()
 #
+from rest_framework import viewsets
 
+from .serializers import CarsDataSerializer
+    # SpeciesSerializer
+from .models import CarsData
+    # Species
+
+
+class CarsDataViewSet(viewsets.ModelViewSet):
+   queryset = CarsData.objects.all()
+   serializer_class = CarsDataSerializer
+
+#
+# class SpeciesViewSet(viewsets.ModelViewSet):
+#    queryset = Species.objects.all()
+#    serializer_class = SpeciesSerializer
