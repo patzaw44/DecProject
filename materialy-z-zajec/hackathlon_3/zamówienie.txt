@@ -1,0 +1,13 @@
+
+                                                                                       
+ ___                                                                                   
+    / /                                                                                
+   / /     ___      _   __      ___                  ( )  ___       __     ( )  ___    
+  / /    //   ) ) // ) )  ) ) //   ) ) //  / /  / / / / //___) ) //   ) ) / / //___) ) 
+ / /    //   / / // / /  / / //   / / //  / /  / / / / //       //   / / / / //        
+/ /___ ((___( ( // / /  / / ((___/ / ((__( (__/ / / / ((____   //   / / / / ((____     
+
+
+
+Końcowe zamówienie to [('kurczak po syczuansku', 21), ('Makaron UDONG z warzywami i kurczakiem', 26), ('Krewetki w sosie słodko-kwaśnym', 31)]
+Do zapłaty za powyższe zamówienie: 88 zł.
