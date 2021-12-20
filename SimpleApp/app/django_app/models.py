@@ -2,11 +2,11 @@ from django.db import models
 
 
 class CarBrand(models.Model):
-    car_make = models.CharField(max_length=40)
+    car_make = models.CharField(max_length=100)
 
 
 class CarModel(models.Model):
-    model_name = models.CharField(max_length=40)
+    model_name = models.CharField(max_length=100)
 
 
 class CarId(models.Model):
@@ -25,12 +25,17 @@ class NumberOfRate(models.Model):
     rates_rating = models.IntegerField()
 
 
-class CarsData(models.Model):
-    make = models.ForeignKey('CarBrand', on_delete=models.CASCADE)
-    model = models.ForeignKey('CarModel', on_delete=models.CASCADE)
+# class CarsData(models.Model):
+#     make = models.ForeignKey('CarBrand', on_delete=models.CASCADE)
+#     model = models.ForeignKey('CarModel', on_delete=models.CASCADE)
 
+    # def __str__(self):
+    #     return str(self.make)
+class CarsData(models.Model):
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
     def __str__(self):
-        return self.car_make
+         return str(self.make)
 
 
 # Usuwanie po id
@@ -52,5 +57,5 @@ class CarDetail(models.Model):
     avg_rating = models.ForeignKey('AverageRate', on_delete=models.CASCADE)
     rates_rating = models.ForeignKey('NumberOfRate', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.make
+    # def __str__(self):
+    #     return self.make

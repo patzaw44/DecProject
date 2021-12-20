@@ -22,17 +22,16 @@ from django.urls import path
 #     path('cars/', CarsDataView),
 # ]
 
-from django.urls import include, path
-
-from rest_framework import routers
-
+from rest_framework.routers import SimpleRouter
 from .views import CarsDataViewSet
     # SpeciesViewSet
+from django.urls import include, path
 
-router = routers.DefaultRouter()
-router.register(r'cars', CarsDataViewSet)
+router = SimpleRouter()
+router.register("", CarsDataViewSet, basename="django_app")
+urlpatterns = router.urls
+# router = routers.DefaultRouter()
 # router.register(r'species', SpeciesViewSet)
 
-urlpatterns = [
-   path('', include(router.urls)),
-]
+
+

@@ -23,18 +23,14 @@ from django.shortcuts import render
 # #     queryset = Cars.objects.all()
 #
 from rest_framework import viewsets
-
 from .serializers import CarsDataSerializer
-    # SpeciesSerializer
+# SpeciesSerializer
 from .models import CarsData
-    # Species
+
+
+# Species
 
 
 class CarsDataViewSet(viewsets.ModelViewSet):
-   queryset = CarsData.objects.all()
-   serializer_class = CarsDataSerializer
-
-#
-# class SpeciesViewSet(viewsets.ModelViewSet):
-#    queryset = Species.objects.all()
-#    serializer_class = SpeciesSerializer
+    serializer_class = CarsDataSerializer
+    queryset = CarsData.objects.all()
