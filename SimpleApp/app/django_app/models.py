@@ -29,13 +29,14 @@ class NumberOfRate(models.Model):
 #     make = models.ForeignKey('CarBrand', on_delete=models.CASCADE)
 #     model = models.ForeignKey('CarModel', on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return str(self.make)
+# def __str__(self):
+#     return str(self.make)
 class CarsData(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
+
     def __str__(self):
-         return str(self.make)
+        return str(self.make)
 
 
 # Usuwanie po id

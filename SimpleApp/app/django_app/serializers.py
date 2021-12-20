@@ -8,9 +8,9 @@ class CarsDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = CarsData
         fields = (
-            'id',
+            # 'id',
             'make',
-            'model'
+            # 'model'
         )
 
 #
