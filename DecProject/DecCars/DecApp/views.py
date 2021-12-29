@@ -6,7 +6,7 @@ from .models import Car, NewRate
 from rest_framework.response import Response
 from rest_framework import viewsets
 # from rest_framework import permissions
-from carsapp.serializers import CarSerializer, CarDelSerializer, RateSerializer, CarAllSerializer, PopularSerializer
+from .serializers import CarSerializer, CarDelSerializer, RateSerializer, CarAllSerializer, PopularSerializer
 from rest_framework.decorators import action
 
 # def test_heading(request):
