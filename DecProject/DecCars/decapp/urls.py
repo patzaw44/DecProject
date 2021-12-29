@@ -1,8 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from DecCars.decapp import views
-
-from DecCars.decapp.views import test_response, create_car, test_heading, AutoViewSet
+from DecCars.decapp.views import test_response, create_car, test_heading
 
 
 router = routers.DefaultRouter()
