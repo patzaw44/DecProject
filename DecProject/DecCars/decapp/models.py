@@ -13,7 +13,7 @@ class Auto(models.Model):
 
 class NewRate(models.Model):
     rating = models.IntegerField(default=5, null=True)
-    car_rate = models.ForeignKey(Auto, on_delete=models.CASCADE, related_name='car_id')
+    car_rate = models.ForeignKey(Auto, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return str(self.car_rate)
+    def __str__(self):
+        return str(self.car_rate)

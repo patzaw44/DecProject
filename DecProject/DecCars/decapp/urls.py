@@ -7,10 +7,10 @@ from DecCars.decapp.views import test_response, create_car, test_heading, AutoVi
 
 router = routers.DefaultRouter()
 router.register(r'cars', views.AutoViewSet, 'Car data')
-# router.register(r'carss', views.AutoDelViewSet, 'Deltest')
-# router.register(r'rate', views.RateViewSet, 'Ratetest')
-# router.register(r'carsall', views.AllAutosViewSet, 'All Cars')
-# router.register(r'popular', views.PopularAutoViewSet, 'Popular cars')
+router.register(r'carss', views.AutoDelViewSet, 'Deltest')
+router.register(r'rate', views.RateViewSet, 'Ratetest')
+router.register(r'carsall', views.AllAutoViewSet, 'All Cars')
+router.register(r'popular', views.PopularAutoViewSet, 'Popular cars')
 
 
 urlpatterns = [

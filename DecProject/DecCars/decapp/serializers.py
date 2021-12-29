@@ -17,7 +17,7 @@ class AutoDelSerializer(serializers.HyperlinkedModelSerializer):
 class RateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = NewRate
-        fields = ['id', 'rating']
+        fields = ['car_rate', 'rating']
 
 
 class AutoAllSerializer(serializers.HyperlinkedModelSerializer):
