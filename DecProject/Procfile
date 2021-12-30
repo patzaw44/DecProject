@@ -1,0 +1,1 @@
+web: gunicorn DecCars.wsgi --log-file -
